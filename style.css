@@ -1,0 +1,266 @@
+
+    /* Modern color scheme and theme */
+    :root {
+        --primary: #2a9d8f;
+        --secondary: #264653;
+        --accent: #e9c46a;
+        --text: #2b2d42;
+        --background: #f8f9fa;
+        --card-bg: #ffffff;
+    }
+
+    body {
+        background-color: var(--background);
+        color: var(--text);
+    }
+
+    /* Layout and formatting improvements */
+    .container {
+        max-width: 1400px;
+        padding: 40px;
+    }
+
+    header {
+        background: linear-gradient(135deg, var(--secondary), var(--primary));
+        padding: 4rem 0;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+        color: #0a080b;
+        text-shadow: 1px 1px 2px rgba(255,255,255,0.4);
+        font-weight: 700;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .section {
+        background: var(--card-bg);
+        border-radius: 15px;
+        padding: 2rem;
+        margin: 2rem 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        border: none;
+    }
+
+    /* Card styling */
+    .project, .certification-item {
+        background: var(--card-bg);
+        border-radius: 10px;
+        padding: 1.5rem;
+        margin: 1rem 0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        border-left: 4px solid var(--primary);
+    }
+
+    .soft-skill {
+        background: var(--primary);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        margin: 0.5rem;
+        display: inline-block;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes scaleIn {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* Apply animations */
+    .section {
+        opacity: 0;
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+    .project {
+        background-color: var(--light-bg);
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+    }
+
+    .project, .certification-item {
+        opacity: 0;
+        animation: slideInRight 0.6s ease-out forwards;
+        animation-delay: 0.2s;
+        transition: all 0.3s ease;
+    }
+
+    .soft-skill {
+        opacity: 0;
+        animation: scaleIn 0.4s ease-out forwards;
+        animation-delay: calc(var(--i, 0) * 0.1s);
+        transition: all 0.3s ease;
+    }
+
+    /* Hover effects */
+    .project:hover, .certification-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    .soft-skill:hover {
+        background: var(--secondary);
+        transform: scale(1.1);
+    }
+
+    /* Typography improvements */
+    h2 {
+        color: var(--secondary);
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+
+    h2::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: var(--accent);
+        border-radius: 2px;
+    }
+
+    h3 {
+        color: var(--primary);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Import Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@400;600&display=swap');
+
+    /* Dark Theme Colors */
+    :root {
+        --bg-dark: #0a0a0a;
+        --text-primary: #ffffff;
+        --text-secondary: #00ff9d;
+        --neon-glow: 0 0 10px #00ff9d, 0 0 20px #00ff9d, 0 0 30px #00ff9d;
+        --box-shadow: 0 4px 15px rgba(0, 255, 157, 0.2);
+    }
+
+    /* Base Styles */
+    body {
+        background-color: var(--bg-dark);
+        color: var(--text-primary);
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Header Styles */
+    header {
+        text-align: center;
+        padding: 3rem 0;
+    }
+
+    header h1 {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 3rem;
+        color: var(--text-secondary);
+        text-shadow: var(--neon-glow);
+        margin-bottom: 1rem;
+    }
+
+    header h2 {
+        font-family: 'Poppins', sans-serif;
+        color: var(--text-primary);
+        font-size: 1.5rem;
+    }
+
+    /* Section Styling */
+    .section {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        padding: 2rem;
+        margin: 2rem 0;
+        box-shadow: var(--box-shadow);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(0, 255, 157, 0.1);
+    }
+
+    /* Skills Grid Enhancement */
+    .skills-grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .skill-category {
+        background: rgba(0, 255, 157, 0.05);
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: var(--box-shadow);
+        transition: transform 0.3s ease;
+    }
+
+    .skill-category:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 255, 157, 0.3);
+    }
+
+    /* Links Styling */
+    a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    a:hover {
+        text-shadow: var(--neon-glow);
+    }
+
+    /* Contact Info Enhancement */
+    .contact-info {
+        background: rgba(0, 255, 157, 0.05);
+        padding: 1rem;
+        text-align: center;
+        margin: 1rem 0;
+        border-radius: 10px;
+        box-shadow: var(--box-shadow);
+    }
+
+    /* Education & Certification Items */
+    .education-item, .certification-item {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 1rem 0;
+        box-shadow: var(--box-shadow);
+        transition: transform 0.3s ease;
+    }
+
+    .education-item:hover, .certification-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 255, 157, 0.3);
+    }
